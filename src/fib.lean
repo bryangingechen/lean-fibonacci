@@ -59,7 +59,7 @@ theorem fib_sum_eq : ∀ (n : ℕ),
 begin
   rw [fibonacci,
     ←fib_sum_eq n],
-  simp [range_concat, fib_sum],
+  simp [range_concat, fib_sum, add_left_comm],
 end
 
 inductive bee : Type
@@ -159,7 +159,7 @@ theorem num_packings_eq_fib : ∀ (n : ℕ),
 | 1 := rfl
 | (n+2) :=
 begin
-  simp [packings, fibonacci],
+  simp [packings, fibonacci, add_left_comm, add_comm],
   rw [num_packings_eq_fib n,
     num_packings_eq_fib (n+1),
     add_left_comm,
