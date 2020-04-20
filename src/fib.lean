@@ -1,4 +1,4 @@
-import data.list.basic
+import data.list.range
 
 @[reducible]
 def fibonacci : ℕ → ℕ
