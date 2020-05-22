@@ -59,7 +59,8 @@ theorem fib_sum_eq : ∀ (n : ℕ),
 begin
   rw [fibonacci,
     ←fib_sum_eq n],
-  simp [range_concat, fib_sum, add_left_comm],
+  simp [range_concat, fib_sum,
+    add_left_comm, add_comm],
 end
 
 inductive bee : Type
@@ -163,7 +164,7 @@ begin
   rw [num_packings_eq_fib n,
     num_packings_eq_fib (n+1),
     add_left_comm,
-    add_left_inj,
+    add_right_inj,
     fibonacci],
 end
 ---
@@ -227,13 +228,13 @@ theorem all_packings : ∀ {n : ℕ} {cs : list car} (h : sum_size cs = n),
 | (n+2) (rabbit::cs) h :=
 begin
   rw [sum_size_cons,
-    add_right_inj 1] at h,
+    add_left_inj 1] at h,
   simp [packings, all_packings, h],
 end
 | (n+2) (cadillac::cs) h :=
 begin
   rw [sum_size_cons,
-    add_right_inj 2] at h,
+    add_left_inj 2] at h,
   simp [packings, all_packings, h],
 end
 
