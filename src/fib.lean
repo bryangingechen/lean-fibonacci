@@ -211,12 +211,12 @@ lemma sum_size_one : ∀ {cs : list car} (h : sum_size cs = 1),
 begin
   rw [sum_size_cons] at h,
   simp,
-  exact sum_size_zero (succ_inj h),
+  exact sum_size_zero (succ.inj h),
 end
 | (cadillac::cs) h :=
 begin
   rw [sum_size_cons] at h,
-  have : sum_size cs + 1 = 0 := succ_inj h,
+  have : sum_size cs + 1 = 0 := succ.inj h,
   contradiction,
 end
 ---
