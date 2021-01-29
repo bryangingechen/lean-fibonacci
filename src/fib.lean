@@ -59,7 +59,7 @@ theorem fib_sum_eq : ∀ (n : ℕ),
 begin
   rw [fibonacci,
     ←fib_sum_eq n],
-  simp [range_concat, fib_sum,
+  simp [range_succ, fib_sum,
     add_left_comm, add_comm],
 end
 
