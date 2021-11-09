@@ -1,8 +1,8 @@
 [package]
 name = "fib"
 version = "0.1"
-lean_version = "leanprover-community/lean:3.26.0"
+lean_version = "leanprover-community/lean:3.35.1"
 path = "src"
 
 [dependencies]
-mathlib = {git = "https://github.com/leanprover/mathlib", rev = "69e7f143c08f09d940597f884ff55d28e33882a6"}
+mathlib = {git = "https://github.com/leanprover/mathlib", rev = "424012aa4b485b86ae26e237e9b39c4ad5a1ac03"}
